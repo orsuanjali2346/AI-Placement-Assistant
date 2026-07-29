@@ -3,17 +3,31 @@ import streamlit as st
 st.set_page_config(
     page_title="AI Placement Assistant",
     page_icon="🤖",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
 
 st.title("🤖 AI Placement Assistant")
 
-st.subheader("Welcome!")
-
 st.markdown("""
-Welcome to your AI-powered placement preparation platform.
+## Welcome to Your AI-Powered Placement Companion
 
-👈 Use the sidebar to navigate through the application.
+This platform is designed to help final-year students prepare for placements through AI.
+
+### 🚀 Features
+
+- 📄 Resume Analyzer
+- 📊 ATS Score
+- 💼 Job Matcher
+- 🎤 Mock Interview
+- 📚 Learning Roadmap
+- 📈 Progress Tracker
+
+---
+
+👈 Select a feature from the sidebar to get started.
 """)
 
-st.success("Navigation is now enabled!")
+st.divider()
+
+st.caption("Version 0.1.0 | Developed by Anjali ❤️")

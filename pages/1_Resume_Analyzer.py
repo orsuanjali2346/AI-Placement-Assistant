@@ -1,7 +1,24 @@
 import streamlit as st
 
+st.set_page_config(page_title="Resume Analyzer")
+
 st.title("📄 Resume Analyzer")
 
-st.write("Welcome to the Resume Analyzer module.")
+st.markdown("""
+Analyze your resume using AI.
 
-st.info("This feature will analyze your resume and provide AI-powered feedback.")
+### What this module will do
+
+✅ Extract resume text
+
+✅ Analyze strengths
+
+✅ Find missing skills
+
+✅ Suggest improvements
+
+---
+
+📤 Resume upload will be added in Sprint 2.
+""")
+st.file_uploader(upload only pdfs)
