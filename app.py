@@ -29,5 +29,4 @@ This platform is designed to help final-year students prepare for placements thr
 """)
 
 st.divider()
-
-st.caption("Version 0.1.0 | Developed by Anjali ❤️")
+st.caption("Version 1.0 | Developed by Orsu Anjali ❤️")
