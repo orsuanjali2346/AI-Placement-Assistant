@@ -159,35 +159,35 @@ The application will open in your browser.
 
 ### 🏠 Welcome Page
 
-![Welcome Page](screenshots/welcome.png)
+<img src="https://raw.githubusercontent.com/orsuanjali2346/AI-Placement-Assistant/main/screenshots/welcome.png" alt="Welcome Page">
 
 ### 📄 Resume Analyzer
 
-![Resume Analyzer](screenshots/resume_analyzer.jpeg)
+<img src="https://raw.githubusercontent.com/orsuanjali2346/AI-Placement-Assistant/main/screenshots/resume_analyzer.jpeg" alt="Resume Analyzer">
 
 ### 📊 ATS Score
 
-![ATS Score](screenshots/ats_score.png)
+<img src="https://raw.githubusercontent.com/orsuanjali2346/AI-Placement-Assistant/main/screenshots/ats_score.png" alt="ATS Score">
 
 ### 💼 Job Matcher
 
-![Job Matcher](screenshots/job_matcher.png)
+<img src="https://raw.githubusercontent.com/orsuanjali2346/AI-Placement-Assistant/main/screenshots/job_matcher.png" alt="Job Matcher">
 
 ### 🎤 Mock Interview
 
-![Mock Interview](screenshots/mock_interview.png)
+<img src="https://raw.githubusercontent.com/orsuanjali2346/AI-Placement-Assistant/main/screenshots/mock_interview.png" alt="Mock Interview">
 
 ### 🗺️ Learning Roadmap
 
-![Learning Roadmap](screenshots/learning_roadmap.png)
+<img src="https://raw.githubusercontent.com/orsuanjali2346/AI-Placement-Assistant/main/screenshots/learning_roadmap.png" alt="Learning Roadmap">
 
 ### 📈 Progress Tracker
 
-![Progress Tracker](screenshots/progress_tracker.png)
+<img src="https://raw.githubusercontent.com/orsuanjali2346/AI-Placement-Assistant/main/screenshots/progress_tracker.png" alt="Progress Tracker">
 
 ### 📊 Placement Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+<img src="https://raw.githubusercontent.com/orsuanjali2346/AI-Placement-Assistant/main/screenshots/dashboard.png" alt="Dashboard">
 
 ## 🔐 Security
 
