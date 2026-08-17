@@ -84,38 +84,117 @@ if uploaded_file:
         st.metric("🔠 Total Characters", total_characters)
 
     clean_resume_text = []
-
+    
     for line in resume_text.splitlines():
         if line.strip():
             clean_resume_text.append(line)
 
     clean_resume_text = "\n".join(clean_resume_text)
 
-    prompt = f"""
-    You are an expert resume reviewer.
+    st.session_state["resume_text"] = clean_resume_text
+    
 
-    Generate a professional summary of the following resume.
+    summary_prompt = f"""
+You are an expert resume reviewer.
 
-    Rules:
-    - Summarize in 4-5 sentences.
-    - Highlight education, technical skills, projects, and strengths.
-    - Keep the tone professional.
-    - Do not invent information.
+Analyze the following resume and respond using exactly this format:
 
-    Resume:
-    {clean_resume_text}
-    """
+### Professional Summary
+(4-5 sentences)
 
-    with st.spinner("🤖 Analyzing your resume..."):
+### Education
+(List the education)
 
-        response = client.models.generate_content(
-            model="gemini-3.6-flash",
-            contents=prompt
+### Technical Skills
+(List the technical skills)
+
+### Projects
+(List the important projects)
+
+### Strengths
+(List 3-5 strengths based only on the resume.)
+
+Do not invent any information that is not present in the resume.
+
+Resume:
+{clean_resume_text}
+"""
+
+    analysis_prompt = f"""
+You are an expert resume reviewer.
+
+Analyze the following resume.
+
+Return the response in Markdown format.
+
+## ⭐ Strengths
+- List 3-5 strengths based only on the resume.
+
+## ⚠️ Weaknesses
+- List 3-5 weaknesses based only on the resume.
+
+## 🛠 Missing Skills
+- List important missing skills based only on the resume.
+
+## 💡 Suggestions
+- Suggest practical improvements to make the resume stronger for placements.
+
+Do not invent any information that is not present in the resume.
+
+Resume:
+{clean_resume_text}
+"""
+
+    try:
+        with st.spinner("🤖 Generating AI Resume Summary..."):
+
+            summary_response = client.models.generate_content(
+                model="gemini-3.6-flash",
+                contents=summary_prompt
+            )
+
+        st.subheader("🤖 AI Resume Summary")
+        st.markdown(summary_response.text)
+
+    
+    except Exception:
+        st.error("❌ Gemini is currently busy. Please try again in a few moments.")
+
+
+    try:
+        with st.spinner("🔍 Analyzing Resume..."):
+
+            analysis_response = client.models.generate_content(
+                model="gemini-3.6-flash",
+                contents=analysis_prompt
         )
 
-    st.subheader("🤖 AI Resume Summary")
+        st.subheader("📋 AI Resume Analysis")
+        st.markdown(analysis_response.text)
 
-    st.write(response.text)
+    except Exception as e:
+        st.error("❌ Unable to analyze the resume.")
+        st.error(f"Error: {e}")
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     with st.expander("🧹 Resume Preview"):
         st.text(clean_resume_text)
+
+
+   
